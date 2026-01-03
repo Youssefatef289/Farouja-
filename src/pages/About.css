@@ -1,0 +1,194 @@
+.about-page {
+  min-height: 100vh;
+}
+
+.page-header {
+  background: var(--red-gradient);
+  color: var(--white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.page-subtitle {
+  font-size: 1.35rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-section {
+  background-color: var(--white);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dark-text);
+}
+
+.about-image-placeholder,
+.farm-image-placeholder {
+  background: linear-gradient(135deg, var(--lighter-green), var(--light-green));
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--white);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-icon {
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.about-image-placeholder p,
+.farm-image-placeholder p {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.quality-section {
+  background-color: var(--off-white);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 3rem;
+}
+
+.commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.commitment-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-top: 4px solid var(--yellow);
+}
+
+.commitment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.commitment-icon {
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+}
+
+.commitment-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.commitment-description {
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+.farm-images-section {
+  background-color: var(--white);
+}
+
+.farm-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image-placeholder {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .about-heading,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .farm-images-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

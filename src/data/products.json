@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "name": "دجاج كامل طازج",
+    "price": 25.99,
+    "category": "Fresh",
+    "image": "/image/product/product (1).jpg",
+    "description": "دجاج كامل طازج ممتاز، يُربى في مزرعتنا بعناية. مثالي للشوي أو الطهي بأي طريقة. حر المدى وخالي من الهرمونات."
+  },
+  {
+    "id": 2,
+    "name": "شرائح صدر الدجاج",
+    "price": 18.99,
+    "category": "Fresh",
+    "image": "/image/product/product (2).jpg",
+    "description": "شرائح صدر دجاج طرية وعصيرية. مختارة يدوياً ومعدة طازجة. مثالية للوجبات السريعة والسلطات والوصفات الصحية."
+  },
+  {
+    "id": 3,
+    "name": "فخذ الدجاج",
+    "price": 15.99,
+    "category": "Fresh",
+    "image": "/image/product/product (3).jpg",
+    "description": "فخذ دجاج طري بنكهة غنية. مثالي للشوي والخبز أو الطبخ البطيء. قطع طازجة عالية الجودة."
+  },
+  {
+    "id": 4,
+    "name": "أجنحة الدجاج",
+    "price": 12.99,
+    "category": "Fresh",
+    "image": "/image/product/product (4).jpg",
+    "description": "أجنحة دجاج ممتازة، رائعة للحفلات والوجبات العادية. طازجة وجاهزة للطهي."
+  },
+  {
+    "id": 5,
+    "name": "أفخاذ الدجاج",
+    "price": 13.99,
+    "category": "Fresh",
+    "image": "/image/product/product (5).jpg",
+    "description": "أفخاذ دجاج لذيذة، مثالية لوجبات العائلة. قطع طازجة مضمونة."
+  },
+  {
+    "id": 6,
+    "name": "دجاج كامل مجمد",
+    "price": 22.99,
+    "category": "Frozen",
+    "image": "/image/product/product (6).jpg",
+    "description": "دجاج كامل مجمد عالي الجودة، مجمد بسرعة للحفاظ على النضارة. مناسب لتخطيط الوجبات."
+  },
+  {
+    "id": 7,
+    "name": "صدر دجاج مجمد",
+    "price": 16.99,
+    "category": "Frozen",
+    "image": "/image/product/product (7).jpg",
+    "description": "صدر دجاج مجمد طازج، مثالي للتخزين والاستخدام لاحقاً. جودة عالية محفوظة."
+  },
+  {
+    "id": 8,
+    "name": "كبد الدجاج",
+    "price": 8.99,
+    "category": "Fresh",
+    "image": "/image/product/product (8).jpg",
+    "description": "كبد دجاج طازج، غني بالعناصر الغذائية. مثالي للوصفات التقليدية والوجبات الصحية."
+  },
+  {
+    "id": 9,
+    "name": "قوانص الدجاج",
+    "price": 9.99,
+    "category": "Fresh",
+    "image": "/image/product/product (9).jpg",
+    "description": "قوانص دجاج طرية، نظيفة وجاهزة للطهي. رائعة لليخنات والأطباق التقليدية."
+  },
+  {
+    "id": 10,
+    "name": "فخذ دجاج مجمد",
+    "price": 14.99,
+    "category": "Frozen",
+    "image": "/image/product/product (10).jpg",
+    "description": "فخذ دجاج مجمد ممتاز. مجمد بسرعة للحفاظ على الجودة والنكهة."
+  },
+  {
+    "id": 11,
+    "name": "لحم دجاج مفروم",
+    "price": 19.99,
+    "category": "Fresh",
+    "image": "/image/product/product (11).jpg",
+    "description": "لحم دجاج مفروم طازج. مثالي للبرجر وكرات اللحم والوصفات المختلفة."
+  },
+  {
+    "id": 12,
+    "name": "ربع دجاج",
+    "price": 17.99,
+    "category": "Fresh",
+    "image": "/image/product/product (12).jpg",
+    "description": "أرباع دجاج طازجة، مثالية للشوي والخبز. جودة ممتازة مضمونة."
+  },
+  {
+    "id": 13,
+    "name": "قطع دجاج للشوي",
+    "price": 17.99,
+    "category": "Fresh",
+    "image": "/image/product/product (13).jpg",
+    "description": "قطع دجاج جاهزة للشوي، طازجة ومتبلة بالطريقة التقليدية. نكهة ممتازة."
+  },
+  {
+    "id": 14,
+    "name": "دجاج عضوي",
+    "price": 32.99,
+    "category": "Fresh",
+    "image": "/image/product/product (14).jpg",
+    "description": "دجاج عضوي طازج 100%، تربى بدون هرمونات أو مضادات حيوية. جودة فاخرة."
+  },
+  {
+    "id": 15,
+    "name": "قطع دجاج مشكلة مجمدة",
+    "price": 18.99,
+    "category": "Frozen",
+    "image": "/image/product/product (15).jpg",
+    "description": "مزيج من قطع الدجاج المجمدة، مناسب للتخزين الطويل. جودة محفوظة."
+  },
+  {
+    "id": 16,
+    "name": "صدر دجاج مشوي جاهز",
+    "price": 24.99,
+    "category": "Fresh",
+    "image": "/image/product/product (16).jpg",
+    "description": "صدر دجاج مشوي جاهز للأكل، طازج وذيذ. مثالي للوجبات السريعة."
+  },
+  {
+    "id": 17,
+    "name": "دجاج كامل متوسط",
+    "price": 23.99,
+    "category": "Fresh",
+    "image": "/image/product/product (17).jpg",
+    "description": "دجاج كامل متوسط الحجم، طازج ومثالي لمعظم الوصفات. حجم متوازن."
+  },
+  {
+    "id": 18,
+    "name": "قطع دجاج مفرومة",
+    "price": 19.99,
+    "category": "Fresh",
+    "image": "/image/product/product (18).jpg",
+    "description": "قطع دجاج مفرومة طازجة، جاهزة للطهي مباشرة. مثالية للبرجر والكفتة."
+  },
+  {
+    "id": 19,
+    "name": "دجاج صغير مجمد",
+    "price": 17.99,
+    "category": "Frozen",
+    "image": "/image/product/product (19).jpg",
+    "description": "دجاج صغير مجمد، مناسب للشوي السريع بعد الذوبان. جودة محفوظة."
+  },
+  {
+    "id": 20,
+    "name": "صدر دجاج كبير",
+    "price": 22.99,
+    "category": "Fresh",
+    "image": "/image/product/product (20).jpg",
+    "description": "صدر دجاج كبير الحجم طازج، غني بالبروتين. مثالي للوجبات الصحية."
+  },
+  {
+    "id": 21,
+    "name": "دجاج كامل فاخر",
+    "price": 35.99,
+    "category": "Fresh",
+    "image": "/image/product/product (21).jpg",
+    "description": "دجاج كامل فاخر طازج، من أفضل الأنواع. جودة استثنائية ونكهة مميزة."
+  },
+  {
+    "id": 22,
+    "name": "قطع دجاج للطبخ",
+    "price": 16.99,
+    "category": "Fresh",
+    "image": "/image/product/product (22).jpg",
+    "description": "قطع دجاج جاهزة للطبخ، طازجة ومثالية للوصفات المختلفة. نكهة غنية."
+  },
+  {
+    "id": 23,
+    "name": "أجنحة دجاج مجمدة",
+    "price": 11.99,
+    "category": "Frozen",
+    "image": "/image/product/product (23).jpg",
+    "description": "أجنحة دجاج مجمدة، جاهزة للطهي. مثالية للحفلات والوجبات السريعة."
+  },
+  {
+    "id": 24,
+    "name": "فخذ دجاج كبير",
+    "price": 18.99,
+    "category": "Fresh",
+    "image": "/image/product/product (24).jpg",
+    "description": "فخذ دجاج كبير طازج، نكهة غنية ومثالية للشوي. حجم كبير ومشبع."
+  },
+  {
+    "id": 25,
+    "name": "دجاج عضوي مجمد",
+    "price": 29.99,
+    "category": "Frozen",
+    "image": "/image/product/product (25).jpg",
+    "description": "دجاج عضوي مجمد، جودة فاخرة محفوظة. 100% عضوي بدون إضافات."
+  },
+  {
+    "id": 26,
+    "name": "قطع دجاج صغيرة",
+    "price": 14.99,
+    "category": "Fresh",
+    "image": "/image/product/product (26).jpg",
+    "description": "قطع دجاج صغيرة الحجم طازجة، مثالية للأطفال والوجبات الصغيرة."
+  },
+  {
+    "id": 27,
+    "name": "صدر دجاج صغير",
+    "price": 15.99,
+    "category": "Fresh",
+    "image": "/image/product/product (27).jpg",
+    "description": "صدر دجاج صغير الحجم طازج، مثالي للوجبات الفردية. طري وعصيري."
+  },
+  {
+    "id": 28,
+    "name": "دجاج كامل كبير مجمد",
+    "price": 27.99,
+    "category": "Frozen",
+    "image": "/image/product/product (28).jpg",
+    "description": "دجاج كامل كبير مجمد، مناسب للعائلات الكبيرة. جودة محفوظة."
+  },
+  {
+    "id": 29,
+    "name": "قطع دجاج للشوي مجمدة",
+    "price": 16.99,
+    "category": "Frozen",
+    "image": "/image/product/product (29).jpg",
+    "description": "قطع دجاج جاهزة للشوي مجمدة، جاهزة للطهي بعد الذوبان. نكهة ممتازة."
+  },
+  {
+    "id": 30,
+    "name": "فخذ دجاج متوسط",
+    "price": 16.99,
+    "category": "Fresh",
+    "image": "/image/product/product (30).jpg",
+    "description": "فخذ دجاج متوسط الحجم طازج، حجم مثالي للوجبات. نكهة غنية."
+  },
+  {
+    "id": 31,
+    "name": "دجاج صغير طازج",
+    "price": 18.99,
+    "category": "Fresh",
+    "image": "/image/product/product (31).jpg",
+    "description": "دجاج صغير طازج، مثالي للشوي السريع. نكهة ممتازة وحجم مناسب."
+  },
+  {
+    "id": 32,
+    "name": "صدر دجاج متوسط",
+    "price": 19.99,
+    "category": "Fresh",
+    "image": "/image/product/product (32).jpg",
+    "description": "صدر دجاج متوسط الحجم طازج، حجم متوازن ومثالي. غني بالبروتين."
+  },
+  {
+    "id": 33,
+    "name": "قطع دجاج مفرومة مجمدة",
+    "price": 17.99,
+    "category": "Frozen",
+    "image": "/image/product/product (33).jpg",
+    "description": "قطع دجاج مفرومة مجمدة، جاهزة للاستخدام بعد الذوبان. مثالية للبرجر."
+  },
+  {
+    "id": 34,
+    "name": "دجاج كامل متوسط مجمد",
+    "price": 24.99,
+    "category": "Frozen",
+    "image": "/image/product/product (34).jpg",
+    "description": "دجاج كامل متوسط الحجم مجمد، جودة محفوظة. حجم متوازن."
+  },
+  {
+    "id": 35,
+    "name": "أفخاذ دجاج مجمدة",
+    "price": 13.99,
+    "category": "Frozen",
+    "image": "/image/product/product (35).jpg",
+    "description": "أفخاذ دجاج مجمدة، جاهزة للطهي. تحافظ على النضارة والطعم."
+  },
+  {
+    "id": 36,
+    "name": "قطع دجاج كبيرة",
+    "price": 21.99,
+    "category": "Fresh",
+    "image": "/image/product/product (36).jpg",
+    "description": "قطع دجاج كبيرة الحجم طازجة، مثالية للعائلات. حجم كبير ومشبع."
+  },
+  {
+    "id": 37,
+    "name": "صدر دجاج للشوي",
+    "price": 20.99,
+    "category": "Fresh",
+    "image": "/image/product/product (37).jpg",
+    "description": "صدر دجاج جاهز للشوي طازج، نكهة ممتازة. مثالي للشواء."
+  },
+  {
+    "id": 38,
+    "name": "دجاج كامل فاخر مجمد",
+    "price": 33.99,
+    "category": "Frozen",
+    "image": "/image/product/product (38).jpg",
+    "description": "دجاج كامل فاخر مجمد، جودة استثنائية محفوظة. نكهة مميزة."
+  },
+  {
+    "id": 39,
+    "name": "قطع دجاج عضوية",
+    "price": 31.99,
+    "category": "Fresh",
+    "image": "/image/product/product (39).jpg",
+    "description": "قطع دجاج عضوية طازجة 100%، بدون هرمونات. جودة فاخرة وصحية."
+  },
+  {
+    "id": 40,
+    "name": "دجاج كامل كبير",
+    "price": 30.99,
+    "category": "Fresh",
+    "image": "/image/product/product (40).jpg",
+    "description": "دجاج كامل كبير الحجم طازج، مثالي للعائلات الكبيرة. حجم كبير ونكهة غنية."
+  }
+]

@@ -1,0 +1,250 @@
+.contact-page {
+  min-height: 100vh;
+}
+
+.page-header {
+  background: var(--red-gradient);
+  color: var(--white);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.page-subtitle {
+  font-size: 1.35rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contact-section {
+  background-color: var(--off-white);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dark-text);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  color: var(--primary-green);
+}
+
+.contact-text h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.contact-text p {
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+.whatsapp-contact {
+  margin-top: 1rem;
+}
+
+.whatsapp-button {
+  width: 100%;
+  max-width: 300px;
+}
+
+.contact-form-container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  direction: rtl;
+  text-align: right;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.map-container {
+  margin-top: 4rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 2rem;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, var(--lighter-green), var(--light-green));
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--white);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.map-icon {
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.map-placeholder p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.map-note {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contact-form-container {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .contact-heading,
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+
+  .whatsapp-button {
+    max-width: 100%;
+  }
+
+  .map-placeholder {
+    min-height: 300px;
+    padding: 3rem 1.5rem;
+  }
+}
+
