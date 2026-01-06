@@ -5,18 +5,13 @@ import Icon from '../components/Icon'
 import './Cart.css'
 
 const Cart = () => {
-  const { cartItems, removeFromCart, updateQuantity, clearCart, getCartTotal } = useCart()
-  const total = getCartTotal()
+  const { cartItems, removeFromCart, updateQuantity, clearCart, getTotalPrice } = useCart()
 
   const handleQuantityChange = (productId, change) => {
     const item = cartItems.find(item => item.id === productId)
     if (item) {
       const newQuantity = item.quantity + change
-      if (newQuantity <= 0) {
-        removeFromCart(productId)
-      } else {
-        updateQuantity(productId, newQuantity)
-      }
+      updateQuantity(productId, newQuantity)
     }
   }
 
@@ -24,13 +19,17 @@ const Cart = () => {
     if (cartItems.length === 0) return
 
     let message = "مرحباً! أود طلب المنتجات التالية:\n\n"
+    
     cartItems.forEach((item, index) => {
+      const itemTotal = (item.price * item.quantity).toFixed(2)
       message += `${index + 1}. ${item.name}\n`
       message += `   الكمية: ${item.quantity}\n`
-      message += `   السعر: ${item.price.toFixed(2)} جنيه\n`
-      message += `   الإجمالي: ${(item.price * item.quantity).toFixed(2)} جنيه\n\n`
+      message += `   السعر للوحدة: ${item.price.toFixed(2)} جنيه\n`
+      message += `   الإجمالي: ${itemTotal} جنيه\n\n`
     })
-    message += `الإجمالي الكلي: ${total.toFixed(2)} جنيه\n\n`
+
+    const totalPrice = getTotalPrice().toFixed(2)
+    message += `الإجمالي الكلي: ${totalPrice} جنيه\n\n`
     message += "يرجى تأكيد التوفر وتفاصيل التوصيل."
 
     const whatsappUrl = `https://wa.me/201099487977?text=${encodeURIComponent(message)}`
@@ -43,7 +42,6 @@ const Cart = () => {
         <div className="page-header">
           <div className="container">
             <h1 className="page-title fade-in-up">سلة التسوق</h1>
-            <p className="page-subtitle fade-in-up">عربة التسوق الخاصة بك</p>
           </div>
         </div>
 
@@ -71,7 +69,7 @@ const Cart = () => {
         <div className="container">
           <h1 className="page-title fade-in-up">سلة التسوق</h1>
           <p className="page-subtitle fade-in-up">
-            {cartItems.length} منتج{cartItems.length > 1 ? 'ات' : ''} في السلة
+            {cartItems.length} منتج{cartItems.length !== 1 ? 'ات' : ''} في السلة
           </p>
         </div>
       </div>
@@ -82,19 +80,14 @@ const Cart = () => {
             <div className="cart-items">
               <div className="cart-header">
                 <h2>المنتجات</h2>
-                <Button
-                  variant="outline"
-                  size="small"
-                  onClick={clearCart}
-                  className="clear-cart-btn"
-                >
-                  مسح السلة
-                </Button>
+                <button className="clear-cart-btn" onClick={clearCart}>
+                  <Icon name="trash" size={20} /> مسح السلة
+                </button>
               </div>
 
               {cartItems.map(item => (
                 <div key={item.id} className="cart-item scale-in">
-                  <Link to={`/products/${item.id}`} className="cart-item-image">
+                  <div className="cart-item-image">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -102,13 +95,15 @@ const Cart = () => {
                         e.target.src = 'https://via.placeholder.com/150x150?text=Product+Image'
                       }}
                     />
-                  </Link>
+                  </div>
 
                   <div className="cart-item-info">
                     <Link to={`/products/${item.id}`}>
                       <h3 className="cart-item-name">{item.name}</h3>
                     </Link>
-                    <p className="cart-item-price">{item.price.toFixed(2)} جنيه</p>
+                    <p className="cart-item-price">
+                      {item.price.toFixed(2)} جنيه للوحدة
+                    </p>
                     {item.category && (
                       <span className={`cart-item-badge ${item.category === 'Fresh' ? 'fresh' : 'frozen'}`}>
                         {item.category === 'Fresh' ? 'طازج' : 'مجمد'}
@@ -117,21 +112,33 @@ const Cart = () => {
                   </div>
 
                   <div className="cart-item-quantity">
-                    <button
-                      className="quantity-btn"
-                      onClick={() => handleQuantityChange(item.id, -1)}
-                      aria-label="تقليل الكمية"
-                    >
-                      −
-                    </button>
-                    <span className="quantity-value">{item.quantity}</span>
-                    <button
-                      className="quantity-btn"
-                      onClick={() => handleQuantityChange(item.id, 1)}
-                      aria-label="زيادة الكمية"
-                    >
-                      +
-                    </button>
+                    <label>الكمية:</label>
+                    <div className="quantity-controls">
+                      <button
+                        className="quantity-btn"
+                        onClick={() => handleQuantityChange(item.id, -1)}
+                        aria-label="تقليل الكمية"
+                      >
+                        −
+                      </button>
+                      <input
+                        type="number"
+                        value={item.quantity}
+                        onChange={(e) => {
+                          const newQuantity = parseInt(e.target.value) || 1
+                          updateQuantity(item.id, newQuantity)
+                        }}
+                        min="1"
+                        className="quantity-input"
+                      />
+                      <button
+                        className="quantity-btn"
+                        onClick={() => handleQuantityChange(item.id, 1)}
+                        aria-label="زيادة الكمية"
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
 
                   <div className="cart-item-total">
@@ -144,6 +151,7 @@ const Cart = () => {
                     className="remove-item-btn"
                     onClick={() => removeFromCart(item.id)}
                     aria-label="إزالة المنتج"
+                    title="إزالة المنتج"
                   >
                     <Icon name="close" size={20} />
                   </button>
@@ -157,15 +165,11 @@ const Cart = () => {
               <div className="summary-details">
                 <div className="summary-row">
                   <span>عدد المنتجات:</span>
-                  <span>{cartItems.reduce((sum, item) => sum + item.quantity, 0)}</span>
+                  <span>{cartItems.reduce((total, item) => total + item.quantity, 0)}</span>
                 </div>
                 <div className="summary-row">
-                  <span>الإجمالي الفرعي:</span>
-                  <span>{total.toFixed(2)} جنيه</span>
-                </div>
-                <div className="summary-row summary-total">
-                  <span>الإجمالي الكلي:</span>
-                  <span>{total.toFixed(2)} جنيه</span>
+                  <span>الإجمالي:</span>
+                  <span className="total-price">{getTotalPrice().toFixed(2)} جنيه</span>
                 </div>
               </div>
 
@@ -174,12 +178,12 @@ const Cart = () => {
                   variant="whatsapp"
                   size="large"
                   onClick={handleWhatsAppOrder}
-                  className="checkout-btn"
+                  className="full-width-button"
                 >
-                  <Icon name="whatsapp" size={20} /> إتمام الطلب عبر واتساب
+                  <Icon name="whatsapp" size={20} /> اطلب عبر واتساب
                 </Button>
                 <Link to="/products">
-                  <Button variant="outline" size="large" className="continue-shopping-btn">
+                  <Button variant="outline" size="large" className="full-width-button">
                     متابعة التسوق
                   </Button>
                 </Link>
@@ -193,4 +197,3 @@ const Cart = () => {
 }
 
 export default Cart
-

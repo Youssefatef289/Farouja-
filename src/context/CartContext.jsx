@@ -11,19 +11,11 @@ export const useCart = () => {
 }
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([])
-
-  // Load cart from localStorage on mount
-  useEffect(() => {
+  const [cartItems, setCartItems] = useState(() => {
+    // Load cart from localStorage on mount
     const savedCart = localStorage.getItem('cart')
-    if (savedCart) {
-      try {
-        setCartItems(JSON.parse(savedCart))
-      } catch (error) {
-        console.error('Error loading cart from localStorage:', error)
-      }
-    }
-  }, [])
+    return savedCart ? JSON.parse(savedCart) : []
+  })
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
@@ -35,12 +27,14 @@ export const CartProvider = ({ children }) => {
       const existingItem = prevItems.find(item => item.id === product.id)
       
       if (existingItem) {
+        // Update quantity if product already exists
         return prevItems.map(item =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         )
       } else {
+        // Add new product to cart
         return [...prevItems, { ...product, quantity }]
       }
     })
@@ -67,12 +61,12 @@ export const CartProvider = ({ children }) => {
     setCartItems([])
   }
 
-  const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
+  const getTotalItems = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0)
   }
 
-  const getCartItemsCount = () => {
-    return cartItems.reduce((count, item) => count + item.quantity, 0)
+  const getTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
   }
 
   const value = {
@@ -81,10 +75,9 @@ export const CartProvider = ({ children }) => {
     removeFromCart,
     updateQuantity,
     clearCart,
-    getCartTotal,
-    getCartItemsCount
+    getTotalItems,
+    getTotalPrice
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
-

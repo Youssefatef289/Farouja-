@@ -28,6 +28,11 @@ const ProductDetails = () => {
     })
   }
 
+  const handleAddToCart = () => {
+    if (!product) return
+    addToCart(product, quantity)
+  }
+
   const handleWhatsAppOrder = () => {
     if (!product) return
     const totalPrice = (product.price * quantity).toFixed(2)
@@ -130,6 +135,14 @@ const ProductDetails = () => {
               </div>
 
               <div className="product-actions">
+                <Button
+                  variant="primary"
+                  size="large"
+                  onClick={handleAddToCart}
+                  className="full-width-button"
+                >
+                  <Icon name="cart" size={20} /> أضف للسلة
+                </Button>
                 <Button
                   variant="whatsapp"
                   size="large"

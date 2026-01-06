@@ -42,24 +42,24 @@ const ProductCard = ({ product }) => {
           <p className="product-card-price">{product.price.toFixed(2)} جنيه</p>
         </div>
       </Link>
-        <div className="product-card-actions">
-          <Button 
-            variant="primary" 
-            size="small"
-            onClick={handleAddToCart}
-            className="full-width"
-          >
-            <Icon name="cart" size={20} /> أضف للسلة
-          </Button>
-          <Button 
-            variant="whatsapp" 
-            size="small"
-            onClick={handleWhatsAppOrder}
-            className="full-width"
-          >
-            <Icon name="whatsapp" size={20} /> اطلب الآن
-          </Button>
-        </div>
+      <div className="product-card-actions">
+        <Button 
+          variant="primary" 
+          size="small"
+          onClick={handleAddToCart}
+          className="full-width"
+        >
+          <Icon name="cart" size={20} /> أضف للسلة
+        </Button>
+        <Button 
+          variant="whatsapp" 
+          size="small"
+          onClick={handleWhatsAppOrder}
+          className="full-width"
+        >
+          <Icon name="whatsapp" size={20} /> اطلب الآن
+        </Button>
+      </div>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { CartProvider } from './context/CartContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import FloatingButtons from './components/FloatingButtons'
@@ -8,6 +9,7 @@ import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Cart from './pages/Cart'
 import './App.css'
 
 function AppContent() {
@@ -38,9 +40,11 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <CartProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </CartProvider>
   )
 }
 
