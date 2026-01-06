@@ -1,5 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useCart } from '../context/CartContext'
 import Button from '../components/Button'
 import Icon from '../components/Icon'
 import productsData from '../data/products.json'
@@ -8,6 +9,7 @@ import './ProductDetails.css'
 const ProductDetails = () => {
   const { id } = useParams()
   const navigate = useNavigate()
+  const { addToCart } = useCart()
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [imageError, setImageError] = useState(false)

@@ -27,6 +27,7 @@ function AppContent() {
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
       <Footer />

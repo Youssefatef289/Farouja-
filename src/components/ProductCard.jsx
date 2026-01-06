@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import Button from './Button'
 import Icon from './Icon'
 import './ProductCard.css'
 
 const ProductCard = ({ product }) => {
+  const { addToCart } = useCart()
+
+  const handleAddToCart = (e) => {
+    e.preventDefault()
+    addToCart(product, 1)
+  }
+
   const handleWhatsAppOrder = (e) => {
     e.preventDefault()
     const message = `مرحباً! أنا مهتم بطلب: ${product.name} - ${product.price} جنيه`
@@ -34,16 +42,24 @@ const ProductCard = ({ product }) => {
           <p className="product-card-price">{product.price.toFixed(2)} جنيه</p>
         </div>
       </Link>
-      <div className="product-card-actions">
-        <Button 
-          variant="whatsapp" 
-          size="small"
-          onClick={handleWhatsAppOrder}
-          className="full-width"
-        >
-          <Icon name="whatsapp" size={20} /> اطلب الآن
-        </Button>
-      </div>
+        <div className="product-card-actions">
+          <Button 
+            variant="primary" 
+            size="small"
+            onClick={handleAddToCart}
+            className="full-width"
+          >
+            <Icon name="cart" size={20} /> أضف للسلة
+          </Button>
+          <Button 
+            variant="whatsapp" 
+            size="small"
+            onClick={handleWhatsAppOrder}
+            className="full-width"
+          >
+            <Icon name="whatsapp" size={20} /> اطلب الآن
+          </Button>
+        </div>
     </div>
   )
 }

@@ -1,11 +1,15 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { useCart } from '../context/CartContext'
+import Icon from './Icon'
 import './Header.css'
 
 const Header = () => {
   const location = useLocation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { getCartItemsCount } = useCart()
+  const cartCount = getCartItemsCount()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +54,10 @@ const Header = () => {
             </Link>
             <Link to="/contact" className={`nav-link ${isActive('/contact')}`} onClick={() => setMobileMenuOpen(false)}>
               اتصل بنا
+            </Link>
+            <Link to="/cart" className={`cart-link ${isActive('/cart')}`} onClick={() => setMobileMenuOpen(false)}>
+              <Icon name="cart" size={24} />
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
             </Link>
           </nav>
 

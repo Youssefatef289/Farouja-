@@ -179,13 +179,19 @@
     display: flex;
   }
 
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    color: var(--white);
-  }
+    .nav-link {
+      width: 100%;
+      text-align: center;
+      color: var(--white);
+    }
 
-  .header.scrolled .nav-link {
-    color: var(--dark-text);
+    .header.scrolled .nav-link {
+      color: var(--dark-text);
+    }
+
+    .cart-link {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
   }
-}
