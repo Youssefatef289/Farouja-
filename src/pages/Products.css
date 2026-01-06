@@ -45,9 +45,9 @@
   animation: fadeInUp 1s ease-out;
 }
 
-.products-section {
+/* .products-section {
   background-color: var(--off-white);
-}
+} */
 
 .filter-buttons {
   display: flex;

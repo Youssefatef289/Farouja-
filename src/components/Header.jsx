@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { useCart } from '../context/CartContext'
+import CartModal from './CartModal'
 import Icon from './Icon'
 import './Header.css'
 
@@ -8,6 +9,7 @@ const Header = () => {
   const location = useLocation()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [cartModalOpen, setCartModalOpen] = useState(false)
   const { getTotalItems } = useCart()
 
   useEffect(() => {
@@ -56,12 +58,19 @@ const Header = () => {
             </Link>
           </nav>
 
-          <Link to="/cart" className="cart-icon-link" onClick={() => setMobileMenuOpen(false)}>
+          <button 
+            className="cart-icon-link" 
+            onClick={() => {
+              setCartModalOpen(true)
+              setMobileMenuOpen(false)
+            }}
+            aria-label="فتح سلة التسوق"
+          >
             <Icon name="cart" size={24} />
             {getTotalItems() > 0 && (
               <span className="cart-badge">{getTotalItems()}</span>
             )}
-          </Link>
+          </button>
 
           <button 
             className="mobile-menu-toggle" 
@@ -74,6 +83,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      <CartModal isOpen={cartModalOpen} onClose={() => setCartModalOpen(false)} />
     </header>
   )
 }

@@ -148,8 +148,57 @@
   transition: all 0.3s ease;
 }
 
-.header.scrolled .mobile-menu-toggle span {
-  background-color: var(--primary-green);
+  .header.scrolled .mobile-menu-toggle span {
+    background-color: var(--primary-green);
+  }
+
+.cart-icon-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header.scrolled .cart-icon-link {
+  color: var(--primary-green);
+}
+
+.cart-icon-link:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.header.scrolled .cart-icon-link:hover {
+  background-color: transparent;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-red);
+  color: var(--white);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid var(--white);
+}
+
+.header.scrolled .cart-badge {
+  border-color: var(--white);
 }
 
 @media (max-width: 768px) {
@@ -187,51 +236,5 @@
 
   .header.scrolled .nav-link {
     color: var(--dark-text);
-  }
-
-  .cart-icon-link {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    margin-right: 1rem;
-  }
-
-  .header.scrolled .cart-icon-link {
-    color: var(--primary-green);
-  }
-
-  .cart-icon-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
-  }
-
-  .header.scrolled .cart-icon-link:hover {
-    background-color: var(--off-white);
-  }
-
-  .cart-badge {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-red);
-    color: var(--white);
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border: 2px solid var(--white);
-  }
-
-  .header.scrolled .cart-badge {
-    border-color: var(--white);
   }
 }
