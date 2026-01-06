@@ -16,7 +16,7 @@ const Home = () => {
 
   const handleWhatsAppOrder = () => {
     const message = "مرحباً! أنا مهتم بمنتجات الدواجن لديكم. هل يمكنكم مساعدتي بمزيد من المعلومات؟"
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`
+      const whatsappUrl = `https://wa.me/201099487977?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 

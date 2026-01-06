@@ -30,7 +30,7 @@ const ProductDetails = () => {
     if (!product) return
     const totalPrice = (product.price * quantity).toFixed(2)
     const message = `مرحباً! أود طلب:\n\nالمنتج: ${product.name}\nالكمية: ${quantity}\nالسعر للوحدة: ${product.price.toFixed(2)} جنيه\nالإجمالي: ${totalPrice} جنيه\n\nيرجى تأكيد التوفر وتفاصيل التوصيل.`
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/201099487977?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 

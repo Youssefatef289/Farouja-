@@ -27,7 +27,7 @@ const Contact = () => {
 
   const handleWhatsAppClick = () => {
     const message = "مرحباً! أود التواصل مع سوق الدواجن."
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/201099487977?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 

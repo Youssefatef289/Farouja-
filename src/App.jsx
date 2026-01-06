@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import FloatingButtons from './components/FloatingButtons'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
@@ -29,6 +30,7 @@ function AppContent() {
         </Routes>
       </main>
       <Footer />
+      <FloatingButtons />
     </div>
   )
 }
