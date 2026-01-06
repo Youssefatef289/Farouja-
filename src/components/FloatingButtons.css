@@ -48,7 +48,7 @@
 .floating-btn-whatsapp {
   background: linear-gradient(135deg, #25D366, #20ba5a);
   color: var(--white);
-  margin-right: auto;
+  margin-left: auto; /* على اليمين في RTL */
 }
 
 .floating-btn-whatsapp:hover {
@@ -60,7 +60,7 @@
 .floating-btn-phone {
   background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
   color: var(--white);
-  margin-left: auto;
+  margin-right: auto; /* على الشمال في RTL */
 }
 
 .floating-btn-phone:hover {
