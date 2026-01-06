@@ -138,16 +138,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Products Preview Section */}
-      <section className="products-preview section">
+      {/* Featured Products Section */}
+      <section className="featured-products section">
         <div className="container">
-          <h2 className="section-title">منتجات مميزة</h2>
+          <h2 className="section-title fade-in-up">منتجات مميزة</h2>
+          <p className="section-subtitle fade-in-up">
+            اكتشف مجموعتنا المختارة بعناية من أفضل منتجات الدواجن
+          </p>
           <div className="products-grid">
             {featuredProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          <div className="products-preview-cta">
+          <div className="products-preview-cta fade-in-up">
             <Link to="/products">
               <Button variant="outline" size="large">
                 عرض جميع المنتجات
