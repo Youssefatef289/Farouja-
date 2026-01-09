@@ -3,15 +3,52 @@ import ProductCard from '../components/ProductCard'
 import productsData from '../data/products.json'
 import './Products.css'
 
+// Load products from localStorage if available, otherwise use default data
+const getProducts = () => {
+  const savedProducts = localStorage.getItem('adminProducts')
+  return savedProducts ? JSON.parse(savedProducts) : productsData
+}
+
 const Products = () => {
-  const [products, setProducts] = useState(productsData)
+  const [products, setProducts] = useState(getProducts())
   const [filter, setFilter] = useState('All')
 
   useEffect(() => {
+    const allProducts = getProducts()
     if (filter === 'All') {
-      setProducts(productsData)
+      setProducts(allProducts)
     } else {
-      setProducts(productsData.filter(product => product.category === filter))
+      setProducts(allProducts.filter(product => product.category === filter))
+    }
+    
+    // Listen for storage changes
+    const handleStorageChange = () => {
+      const updatedProducts = getProducts()
+      if (filter === 'All') {
+        setProducts(updatedProducts)
+      } else {
+        setProducts(updatedProducts.filter(product => product.category === filter))
+      }
+    }
+    
+    window.addEventListener('storage', handleStorageChange)
+    
+    // Check for changes in the same tab
+    const interval = setInterval(() => {
+      const currentProducts = getProducts()
+      const currentFiltered = filter === 'All' 
+        ? currentProducts 
+        : currentProducts.filter(product => product.category === filter)
+      const currentFilteredStr = JSON.stringify(currentFiltered)
+      const productsStr = JSON.stringify(products)
+      if (currentFilteredStr !== productsStr) {
+        setProducts(currentFiltered)
+      }
+    }, 1000)
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+      clearInterval(interval)
     }
   }, [filter])
 

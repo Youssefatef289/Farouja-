@@ -4,6 +4,12 @@ import Button from '../components/Button'
 import ProductCard from '../components/ProductCard'
 import Icon from '../components/Icon'
 import productsData from '../data/products.json'
+
+// Load products from localStorage if available, otherwise use default data
+const getProducts = () => {
+  const savedProducts = localStorage.getItem('adminProducts')
+  return savedProducts ? JSON.parse(savedProducts) : productsData
+}
 import './Home.css'
 
 const Home = () => {
@@ -11,7 +17,8 @@ const Home = () => {
 
   useEffect(() => {
     // Get first 6 products as featured
-    setFeaturedProducts(productsData.slice(0, 6))
+    const products = getProducts()
+    setFeaturedProducts(products.slice(0, 6))
   }, [])
 
   const handleWhatsAppOrder = () => {

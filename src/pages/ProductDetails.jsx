@@ -4,6 +4,12 @@ import { useCart } from '../context/CartContext'
 import Button from '../components/Button'
 import Icon from '../components/Icon'
 import productsData from '../data/products.json'
+
+// Load products from localStorage if available, otherwise use default data
+const getProducts = () => {
+  const savedProducts = localStorage.getItem('adminProducts')
+  return savedProducts ? JSON.parse(savedProducts) : productsData
+}
 import './ProductDetails.css'
 
 const ProductDetails = () => {
@@ -14,12 +20,13 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1)
   const [imageError, setImageError] = useState(false)
 
-  useEffect(() => {
-    const foundProduct = productsData.find(p => p.id === parseInt(id))
-    if (foundProduct) {
-      setProduct(foundProduct)
-    }
-  }, [id])
+    useEffect(() => {
+      const products = getProducts()
+      const foundProduct = products.find(p => p.id === parseInt(id))
+      if (foundProduct) {
+        setProduct(foundProduct)
+      }
+    }, [id])
 
   const handleQuantityChange = (change) => {
     setQuantity(prev => {

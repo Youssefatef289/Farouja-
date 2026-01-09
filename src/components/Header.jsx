@@ -58,6 +58,16 @@ const Header = () => {
             </Link>
           </nav>
 
+          <Link 
+            to="/admin" 
+            className={`admin-icon-link ${isActive('/admin')}`}
+            onClick={() => setMobileMenuOpen(false)}
+            title="لوحة التحكم"
+            aria-label="لوحة التحكم"
+          >
+            <Icon name="person" size={24} />
+          </Link>
+
           <button 
             className="cart-icon-link" 
             onClick={() => {

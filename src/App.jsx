@@ -9,6 +9,7 @@ import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Admin from './pages/Admin'
 import Cart from './pages/Cart'
 import './App.css'
 
@@ -25,10 +26,11 @@ function AppContent() {
       <main className="page-transition">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
